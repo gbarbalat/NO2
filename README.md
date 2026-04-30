@@ -10,9 +10,13 @@ A multi-resolution ensemble model of three decision-tree-based algorithms to pre
 - Download data from
 - Transfer to gricad (UGA grid to make computations)
 
-### 1 km model  
+### 1 km model (gricad)  
+dir=/bettik/barbalag/  
+use so-called "MPI" scripts
 Change header.R
-Make sure everything there in data folder
+Make sure everything there in "data" folder  
+Run ALL_SCRIPTS_....sh  
+Keep 1 km ensemble predictions for the year in main directory  
 
 I- PREPROCESSING
 
