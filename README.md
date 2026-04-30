@@ -12,6 +12,19 @@ Briefly, predictions were obtained following 3 modeling stages
 - stage 2 fits an ensemble of 3 basis learners (Random Forest, Categorical Boosting, Extreme Gradient Boosting) to predict 1 km NO2 concentrations   
 - stage 3 also fits an ensemble of 3 basis learners (Random Forest, Categorical Boosting, Extreme Gradient Boosting) to predict residuals of the 1km ensemble model associated with a 200m grid.  
 
+### Where to download data  
+- IGN
+- OMI
+- CAMS
+- all ERA5
+- NDVI
+- DMSP
+- CLC (6 years)
+- Population (5 years)
+- Emission (INERIS : 2004-2007-2012)
+- Elevation (once)
+- NO2 at Monitoring stations
+
 ### Pre-processing
 - IGN data (roads, road_nodes, train_stations, rail) with script read_IGN_data; produces RData files which you will transfer onto the grid
 - Download the following data: IGN, OMI, CAMS, all ERA5, monitor data, NDVI, DMSP (all yearly data), CLC (6 years), Pop (5 years), Emission (INERIS : 2004-2007-2012), Elevation (once)
