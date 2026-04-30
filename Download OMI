@@ -1,7 +1,0 @@
-- https://disc.gsfc.nasa.gov/datasets?page=1&measurement=Nitrogen%20Dioxide&source=AURA%20OMI&project=AURA 
-- Select file of interest, region of interest and temporality  
-- Download .txt file
-- Transfer onto gricad
-- Run the txt file in gricad, give password 
-- Wait for the data to download
-- Move data to appropriate data folder
