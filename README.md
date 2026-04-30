@@ -16,7 +16,7 @@ Briefly, predictions were obtained following 3 modeling stages
 - IGN
 - OMI
 - CAMS
-- all ERA5
+- ERA5
 - NDVI
 - DMSP
 - CLC (6 years)
