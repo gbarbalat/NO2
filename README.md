@@ -67,4 +67,8 @@ Each '*_200m.fst' file is a dataframe of 4 columns and nDays rows. nDays=365 (36
 -The coordinate reference system (x and y) is Lambert-93 (EPSG 2154, also called RGF93 / Lambert-93), which is the official projection for Metropolitan France.  
 -predictions are the actual values of NO2 concentrations predicted by our ensemble geospatial model (see Barbalat et al, 2024, Environmental Research)  
 Where predicted concentrations were negative (no bounds were specified in the modeling stages), they were reset to 0.  
--time indicate the day of the year (1 ... 365 or 366 for leap years). 1 indicates the first day of the year (1st of Jan); 365 (366 for leap years) indicates the last day of the year (31st of Dec)  The first 246,332 rows cover the first day of the year (time==1), going on with the second day (time==2), till the last day of the year (time==365 or 366 for leap years)
+-time indicate the day of the year (1 ... 365 or 366 for leap years). 1 indicates the first day of the year (1st of Jan); 365 (366 for leap years) indicates the last day of the year (31st of Dec)  The first 246,332 rows cover the first day of the year (time==1), going on with the second day (time==2), till the last day of the year (time==365 or 366 for leap years)  
+
+## Specificities of the 2000-2004 modeling stages  
+Models ran for years 2000-2004 did not include predictions of missing OMI data (stage 1). This is because there was no OMI data in 2004 and before (OMI started from Oct 2004). For years 2000, 2001 and 2002, stage 2 models were run without CAMS data as CAMS data started to be produced in 2003. We obtained very similar CV predictive performances for stage 2 whether or not we included stage 1 and CAMS data as stage 2 predictors. Therefore, we can be reasonably confident that not including stage 1 and CAMS data as predictors for stage 2 will not significantly decrease the predictive performance of our 1 km model.
+
