@@ -1,13 +1,14 @@
-variable,Product,PRODUCT name,Spatial Resolution,Temporal Resolution,WhereFrom,,,
-grid,MODIS,MOD09GA,1 km,Daily,https://search.earthdata.nasa.gov/,,,
-Atmospheric NO2,OMI,total column not screened OMNO2_003,"0,25*0,25 ie 27-28 km (near the equator)",Daily,https://disc.gsfc.nasa.gov/,see cmd txt.txt,- https://disc.gsfc.nasa.gov/datasets?page=1&measurement=Nitrogen%20Dioxide&source=AURA%20OMI&project=AURA ,
-Modelled Atmospheric NO2,CAMS,TcNO2 (single level),0.75*0.75 i.e. 83-84 km,Twice daily,https://ads.atmosphere.copernicus.eu/,see Details pratiques,,
-Meteorological var,ERA-5,,"0,25*0,25 ie 27-28 km (near the equator)",,https://cds.climate.copernicus.eu/,see Details pratiques,see Mike's helper,takes a while!
-Elevation,elevation,European Digital Elevation Model v1.1,25 m,spanning the whole study period,https://land.copernicus.eu/imagery-in-situ/eu-dem/eu-dem-v1.1,,,
-NDVI,MODIS,MOD13A3,1 km,1 month,https://search.earthdata.nasa.gov/,,,
-NDVI,MODIS,MOD13Q1,250 m,15 days,https://search.earthdata.nasa.gov/,,,
-Land cover,Corine Land Cover datasets,Uxxx_CLCxxx_V2020_20u1,100 m,6 years,https://land.copernicus.eu/pan-european/corine-land-cover,,,
-Light at night,DMSP,,1 km,yearly till 2013,https://ngdc.noaa.gov/eog/data/web_data/v4composites/,https://eogdata.mines.edu/products/dmsp/,,
-Light at night,VIIRS,average_mask V2.1,500 m,yearly from 2014,https://payneinstitute.mines.edu/eog/,https://eogdata.mines.edu/products/vnl/,,
-Population,GWP,population count v4,1 km,5 years till 2020,https://sedac.ciesin.columbia.edu/data/set/gpw-v4-population-count-rev11/data-download#,,,
-traffic data,ROUTE 500,ROUTE 500,vector ?,1 year till 2021,https://geoservices.ign.fr/route500,https://docplayer.fr/amp/147612952-Route-500-version-1-1-descriptif-de-contenu-revision-juillet-date-du-document-avril-2001.html,https://wxs.ign.fr/pfinqfa9win76fllnimpfmbi/telechargement/inspire/ROUTE500-France-2003$ROUTE500_1-0__SHP_LAMB93_FXX_2003-01-01/file/ROUTE500_1-0__SHP_LAMB93_FXX_2003-01-01.7z,
+variable,Product,PRODUCT name,Spatial Resolution,Temporal Resolution,Select files from … ,
+grid,MODIS,MOD09GA,1 km,Daily,https://search.earthdata.nasa.gov/,
+Atmospheric NO2,OMI,total column not screened OMNO2_003,"0,25*0,25 ie 27-28 km (near the equator)",Daily,https://disc.gsfc.nasa.gov/datasets?page=1&measurement=Nitrogen%20Dioxide&source=AURA%20OMI&project=AURA ,download files directly on the server with wget --user=gbarbalat --ask-password --content-disposition -i tmp.txt
+Modelled Atmospheric NO2,CAMS,TcNO2 (single level),0.75*0.75 i.e. 83-84 km,Every 3 hours,https://ads.atmosphere.copernicus.eu/,See cams-era5.txt
+Meteorological var,ERA-5,,"0,25*0,25 ie 27-28 km (near the equator)",Every hour,https://cds.climate.copernicus.eu/,See cams-era5.txt – takes a while ….
+Elevation,elevation,European Digital Elevation Model v1.1,25 m,spanning the whole study period,https://land.copernicus.eu/imagery-in-situ/eu-dem/eu-dem-v1.1,
+NDVI,MODIS,MOD13A3,1 km,1 month,https://search.earthdata.nasa.gov/,download files directly on the server by running ./chmod +x NDVI-download.sh and then NDV-download.sh
+NDVI,MODIS,MOD13Q1,250 m,15 days,https://search.earthdata.nasa.gov/,download files directly on the server by running ./chmod +x NDVI-download.sh and then NDV-download.sh
+Land cover,Corine Land Cover datasets,Uxxx_CLCxxx_V2020_20u1,100 m,6 years,https://land.copernicus.eu/pan-european/corine-land-cover,
+Light at night,DMSP,,1 km,yearly till 2013,https://ngdc.noaa.gov/eog/data/web_data/v4composites/,https://eogdata.mines.edu/products/dmsp/
+Light at night,VIIRS,average-mask V2.1 v2.2 since 2022,500 m,yearly from 2014,https://payneinstitute.mines.edu/eog/,https://eogdata.mines.edu/products/vnl/
+Population,GWP,population count v4,1 km,5 years till 2020,https://sedac.ciesin.columbia.edu/data/set/gpw-v4-population-count-rev11/data-download#,
+traffic data,ROUTE 500,ROUTE 500,Vector,1 year,https://geoservices.ign.fr/route500 till 2021 then https://cartes.gouv.fr/rechercher-une-donnee/dataset/IGNF_BD-CARTO ,Preprocess on laptop using read_IGN.R
+Monitoring station,NO2 @Monitoring station,,,,,
