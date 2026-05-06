@@ -1,10 +1,13 @@
 header=1;
 days_in_total=365
-current_year=2007
+current_year=2023
+Npred=39 #Npred=39 if CAMS, if no CAMS (2002 and before) Npred=38
+#IN prepare_df_Model2: N_tot_pred=38 or 39 if CAMS
+#IN try_parallel_preproc: list_cams comment or not 
 #check NO2 monitors!!!!!!
 
 #for pop
-year_at_stake=2015## 2005-2010-2015-2020, year and next four years
+year_at_stake=2020## 2005-2010-2015-2020, year and next four years
 pop_ds_chosen=1500
 
 #for INERIS_emissions
