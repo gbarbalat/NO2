@@ -45,9 +45,9 @@ Keep 1 km ensemble predictions for the year in main directory
 - Run model1 which predicts missing OMI data: Model1_ranger_not_caret.R (ranger without caret HP tuning)
 - Model2 and 3 predict daily NO2 concentrations using NO2 at monitoring stations as true outcomes  
 - Extract all data at monitoring stations: Prepare_df_Model2.R
-- Make folds with FoldsID_final.R
+- Make folds for Model2: with FoldsID_final.R
 - Run ML models: Model2_ranger_caret, Model2_catboost_caret, Model2_xgboost_caret  
-- basis_lrn_pred4ens_ST
+- Make folds for Model3: basis_lrn_pred4ens_ST
 - ensemble those predictions: Model3_ensemble_MPI.R
 
 ### 200 m model (gricad)  
