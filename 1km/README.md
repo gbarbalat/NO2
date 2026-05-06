@@ -1,4 +1,11 @@
 
+First, run jobs that you would run once for a period of time eg   
+preproc_INERIS_emissions  
+preproc_pop  
+preproc_CLC  
+modify hdr in each script, check where the data should be  
+
+
 ALL_SCRIPTS_MPI.sh defines the arborescence of jobs on the computation grid (gricad).  
 It's called MPI, but it has nothing to do with MPI ...  
 
