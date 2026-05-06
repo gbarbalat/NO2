@@ -2,7 +2,7 @@ rm(list=ls())
 library(dplyr)
 library(data.table)
 MPI=TRUE
-current_year=2019
+source("header_MPI.R")
 all_predict_ens1_l=list()
 
 if (MPI==TRUE) {
