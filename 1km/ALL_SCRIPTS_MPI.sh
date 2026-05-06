@@ -150,3 +150,7 @@ jobid_basis_lrn_pred4ens_ST_MPI=$OAR_JOB_ID
 oarsub -a $jobid_basis_lrn_pred4ens_ST_MPI -a $jobid_Model2_xgboost_caret_MPI -S ./Model3_ensemble_MPI.sh | tee out_Model3_ensemble_MPI.tmp
 eval `egrep -o "OAR_JOB_ID=.*" out_Model3_ensemble_MPI.tmp`
 jobid_Model3_ensemble_MPI=$OAR_JOB_ID
+
+oarsub -a $jobid_Model3_ensemble_MPI -S ./concat_pred_ens.sh | tee out_concat_pred_ens.tmp
+eval `egrep -o "OAR_JOB_ID=.*" out_concat_pred_ens.tmp`
+jobid_concat_pred_ens=$OAR_JOB_ID
