@@ -12,7 +12,7 @@ Briefly, predictions were obtained following 3 modeling stages
 - stage 2 fits an ensemble of 3 basis learners (Random Forest, Categorical Boosting, Extreme Gradient Boosting) to predict 1 km NO2 concentrations   
 - stage 3 also fits an ensemble of 3 basis learners (Random Forest, Categorical Boosting, Extreme Gradient Boosting) to predict residuals of the 1km ensemble model associated with a 200m grid.  
 
-### Where to download data  
+### Where to download data: see How to access data.csv  
 - IGN
 - OMI
 - CAMS
