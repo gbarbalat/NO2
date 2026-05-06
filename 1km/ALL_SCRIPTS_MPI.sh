@@ -4,7 +4,6 @@ oarsub -S ./preproc_OMI_MPI.sh | tee out_preproc_OMI_MPI.tmp
 eval `egrep -o "OAR_JOB_ID=.*" out_preproc_preproc_OMI_MPI.tmp`
 jobid_preproc_OMI_MPI=$OAR_JOB_ID
 
-
 oarsub -S ./preproc_IGN1_MPI.sh | tee out_preproc_IGN1_MPI.tmp
 eval `egrep -o "OAR_JOB_ID=.*" out_preproc_preproc_IGN1_MPI.tmp`
 jobid_preproc_IGN1_MPI=$OAR_JOB_ID
@@ -100,6 +99,7 @@ jobid_preproc_NDVI_MPI=$OAR_JOB_ID
 oarsub -S ./preproc_CAMS_MPI.sh | tee out_preproc_CAMS_MPI.tmp
 eval `egrep -o "OAR_JOB_ID=.*" out_preproc_CAMS_MPI.tmp`
 jobid_preproc_CAMS_MPI=$OAR_JOB_ID
+
 
 oarsub -a $jobid_preproc_OMI_MPI -a $jobid_preproc_IGN1_MPI -a $jobid_preproc_IGN2_MPI -a $jobid_preproc_IGN3_MPI -a $jobid_preproc_IGN4_MPI -a $jobid_preproc_IGN5_MPI -a $jobid_preproc_IGN6_MPI -a $jobid_preproc_IGN7_MPI -a $jobid_preproc_IGN8_MPI -a $jobid_preproc_ERA5_asn_MPI -a $jobid_preproc_ERA5_blh_00_MPI -a $jobid_preproc_ERA5_blh_12_MPI -a $jobid_preproc_ERA5_d2m_MPI -a $jobid_preproc_ERA5_e_MPI -a $jobid_preproc_ERA5_sp_MPI -a $jobid_preproc_ERA5_ssr_MPI -a $jobid_preproc_ERA5_t2m_mean_MPI -a $jobid_preproc_ERA5_t2m_sd_MPI -a $jobid_preproc_ERA5_tcc_MPI -a $jobid_preproc_ERA5_tp_MPI -a $jobid_preproc_ERA5_u10_MPI -a $jobid_preproc_ERA5_v10_MPI -S ./try_parallel_preproc_MPI.sh | tee out_try_parallel_preproc_MPI.tmp
 eval `egrep -o "OAR_JOB_ID=.*" out_try_parallel_preproc_MPI.tmp`
