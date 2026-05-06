@@ -1,0 +1,125 @@
+source("bare_minimum_parallel_MPI.R")
+
+##########################################################
+##########################################################
+here_data_CAMS=paste0(here_data,"CAMS/",current_year ,"/")
+files <- dir(path = here_data_CAMS,pattern="*.nc")
+list_cams=list(here_data_pred=here_data_CAMS,already_read=FALSE, file_read=NULL,file_sf=NULL,
+                         mosaicking=FALSE,files_mosaic=NULL,which_att=FALSE,too_big=FALSE,
+			 take_part_raster=FALSE,
+                         mean_over_time = TRUE,crs_num=4236,monitors=FALSE,
+                         days_in_total=days_in_total,use_IDW=FALSE,use_st_nearest_point=TRUE,
+                         sub = TRUE,files_final=files,name="cams")
+print("cams_gathered")
+
+list_param=list_cams
+
+here_data_pred=list_param$here_data_pred
+already_read=list_param$already_read
+file_read=list_param$file_read
+file_sf=list_param$file_sf
+mosaicking=list_param$mosaicking
+files_mosaic=list_param$files_mosaic
+which_att=list_param$which_att
+too_big=list_param$too_big
+take_part_raster=list_param$take_part_raster
+mean_over_time=list_param$mean_over_time
+crs_num=list_param$crs_num
+monitors=list_param$monitors
+days_in_total=list_param$days_in_total
+use_IDW=list_param$use_IDW
+use_st_nearest_point=list_param$use_st_nearest_point
+sub=list_param$sub
+files_final=list_param$files_final
+name=list_param$name
+
+ concat_raster=france_grid
+  
+  #
+x=foreach (i=1:days_in_total) %dopar% {
+     
+    if (already_read==FALSE & mosaicking==FALSE & too_big==FALSE & monitors==FALSE) {
+      
+      if (length(files_final)>1) {
+
+	#CAMS and ERA-5
+	a=sub(".nc","",files_final)
+
+	#OMI
+	b=sub(".*OMNO2d_","",a)
+	c=sub("_v003.*","",b)
+	d=sub("m","",c)
+	e=yday(as.Date(d,"%Y%m%d"))
+
+	if (is.na(match(i,e))) {
+		file_read=france_grid 
+		file_read[[1]]=NA
+	} else {file_read <- read_stars(paste0(here_data_pred,files_final[match(i,e)]),sub = sub,driver = NULL,proxy=FALSE)}
+      } else {
+        file_read < read_stars(paste0(here_data_pred,files_final),sub = sub,driver = NULL,proxy=FALSE)
+      }
+      
+    }
+
+   if (mean_over_time) {
+      #mean time value for each pixel
+      file_read <- st_apply(file_read, c("x", "y"), mean) 
+      
+    }
+    
+    file_read <- st_warp(file_read,dest = france_grid)
+    file_read <- file_read[france_sf]
+   
+   if (use_st_nearest_point) {
+
+	r = is.na(file_read) & !is.na(france_grid)
+
+ 	if (sum(r[[1]])>0) {
+ 	sf.tmp=st_as_sf(file_read,as_points = TRUE)
+	grid_tmp=st_join(france_grid_sf,sf.tmp)[,-1]
+	grid_tmp_NA=grid_tmp[is.na(grid_tmp),]
+	grid_tmp_notNA=grid_tmp[!is.na(st_drop_geometry(grid_tmp)),]
+
+	index <- st_nearest_feature(grid_tmp_NA,grid_tmp_notNA)
+	grid_tmp_NA[,]=grid_tmp_notNA[index,1]
+
+	file_read= rbind(grid_tmp_NA,grid_tmp_notNA)
+	file_read=st_rasterize(file_read,france_grid)#dx = 1000, dy = 1000)
+        file_read=st_as_stars(file_read)
+	file_read=st_warp(file_read,france_grid)
+	}
+
+   } 
+    
+  print(i)
+  file_read
+
+}#end of foreach loop
+#save(x,file="cams.RData")
+
+#concatenate foreach 
+concat_raster=do.call(c,x)
+  # = concat_raster[-1,,]
+  concat_raster = st_redimension(concat_raster)
+  concat_raster = st_set_dimensions(concat_raster,
+                              which="new_dim", #replace that dimension ...
+                              names = "time", #...by that one
+                              values = 1:days_in_total
+  )
+names(concat_raster)=name
+#save(concat_raster,file="cams_concat.RData")
+write_stars(concat_raster,paste0("cams_",current_year,".tif"))
+
+#move files
+file=paste0("cams_",current_year,".tif")
+names <- c(file) 
+
+# custom function
+my_function <- function(x){
+  file.rename( from = file.path(here_, x) ,
+               to = file.path(paste0(here_data_CAMS), x) )
+}
+
+# apply the function to all files
+lapply(names, my_function)
+
