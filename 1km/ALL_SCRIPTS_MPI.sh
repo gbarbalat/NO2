@@ -109,11 +109,11 @@ oarsub -a $jobid_prepare_df_Model1_MPI -S ./Model1_ranger_not_caret_MPI_PARTI.sh
 eval `egrep -o "OAR_JOB_ID=.*" out_Model1_ranger_not_caret_MPI_PARTI.tmp`
 jobid_Model1_ranger_not_caret_MPI_PARTI=$OAR_JOB_ID
 
-oarsub -a $jobid_prepare_df_Model1_MPI -S ./Model1_ranger_not_caret_MPI_PARTII.sh -a $OAR_JOB_ID | tee out_Model1_ranger_not_caret_MPI_PARTII.tmp
+oarsub -a $jobid_Model1_ranger_not_caret_MPI_PARTI -S ./Model1_ranger_not_caret_MPI_PARTII.sh -a $OAR_JOB_ID | tee out_Model1_ranger_not_caret_MPI_PARTII.tmp
 eval `egrep -o "OAR_JOB_ID=.*" out_Model1_ranger_not_caret_MPI_PARTII.tmp`
 jobid_Model1_ranger_not_caret_MPI_PARTII=$OAR_JOB_ID
 
-oarsub -a $jobid_prepare_df_Model1_MPI -S ./Model1_ranger_not_caret_MPI_PARTIII.sh -a $OAR_JOB_ID | tee out_Model1_ranger_not_caret_MPI_PARTIII.tmp
+oarsub -a $jobid_Model1_ranger_not_caret_MPI_PARTII -S ./Model1_ranger_not_caret_MPI_PARTIII.sh -a $OAR_JOB_ID | tee out_Model1_ranger_not_caret_MPI_PARTIII.tmp
 eval `egrep -o "OAR_JOB_ID=.*" out_Model1_ranger_not_caret_MPI_PARTIII.tmp`
 jobid_Model1_ranger_not_caret_MPI_PARTIII=$OAR_JOB_ID
 
