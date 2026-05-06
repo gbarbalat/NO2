@@ -1,2 +1,11 @@
-ALL_SCRIPTS_MPI.sh defines the arborescence of jobs on the computation grid (gricad).
-It's called MPI, but it has nothing to do with MPI ...
+
+ALL_SCRIPTS_MPI.sh defines the arborescence of jobs on the computation grid (gricad).  
+It's called MPI, but it has nothing to do with MPI ...  
+
+preproc scripts preprocess raw data  
+try_parallel_preproc finish the preprocessing and concatenates  
+
+prepara_df_Model1 and 2 prepare dataframes before running Model 1 and 2  
+
+FoldsID prepare folds  for Model2  
+basis_lrn_pred4ens_ST_MPI prepares folds for Model3
