@@ -50,7 +50,8 @@ x=foreach (i=1:days_in_total) %do% {
 
 	if (is.na(match(i,e))) {
 		file_read=france_grid 
-		file_read[[1]]=units::as_units(NA,"molecule/cm2")
+    units(file_read[[1]]) <- make_units(molecule/cm2)
+		#file_read[[1]]=units::as_units(NA,"molecule/cm2")
 		return(file_read)
 	} else {
 		file_read <- read_stars(paste0(here_data_pred,files_final[match(i,e)]),sub = sub,driver = NULL,proxy=FALSE)
