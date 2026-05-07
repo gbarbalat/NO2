@@ -36,7 +36,7 @@ name=list_param$name
  concat_raster=france_grid
   
   #
-x=foreach (i=1:days_in_total) %dopar% {
+x=foreach (i=1:days_in_total) %do% {
 #x=foreach (i=60:62) %dopar% {
 
 	#CAMS and ERA-5
@@ -52,7 +52,10 @@ x=foreach (i=1:days_in_total) %dopar% {
 		file_read=france_grid 
 		file_read[[1]]=units::as_units(NA,"molecule/cm2")
 		return(file_read)
-	} else {file_read <- read_stars(paste0(here_data_pred,files_final[match(i,e)]),sub = sub,driver = NULL,proxy=FALSE)}
+	} else {
+		file_read <- read_stars(paste0(here_data_pred,files_final[match(i,e)]),sub = sub,driver = NULL,proxy=FALSE)
+		file_read <- st_set_crs(file_read, 4326)
+	}
       
     file_read <- st_warp(file_read,dest = france_grid)
     file_read <- file_read[france_sf]
