@@ -25,7 +25,7 @@ c=unique(b)
 #loop for first set of files to the last
 #assign the same values till c[i+1]
 
-x=foreach (i=1:months_in_total) %dopar% {
+x=foreach (i=1:months_in_total) %do% {
 
 	files_mosaic <- dir(path = here_data_NDVI, pattern=paste0(pattern_start,c[i]))#[1:3]
 

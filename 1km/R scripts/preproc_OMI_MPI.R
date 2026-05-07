@@ -37,7 +37,7 @@ name=list_param$name
   
   #
 x=foreach (i=1:days_in_total) %do% {
-#x=foreach (i=60:62) %dopar% {
+#x=foreach (i=60:62) %do% {
 
 	#CAMS and ERA-5
 	a=sub(".nc","",files_final)

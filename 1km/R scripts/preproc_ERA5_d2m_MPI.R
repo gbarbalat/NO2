@@ -42,7 +42,7 @@ idx_era5=5
 	name=list_param$name
 
 
-x=foreach (i=1:days_in_total) %dopar% {
+x=foreach (i=1:days_in_total) %do% {
 	
  concat_raster=france_grid
       
