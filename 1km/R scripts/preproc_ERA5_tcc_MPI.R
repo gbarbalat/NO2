@@ -108,7 +108,7 @@ x=foreach (i=1:days_in_total) %do% {
 #save(x,file=paste0(all_pred[idx_era5],".RData"))
 
 #concatenate foreach 
-concat_raster=do.call(c,x)
+concat_raster=do.call("c",x)
   # = concat_raster[-1,,]
   concat_raster = st_redimension(concat_raster)
   concat_raster = st_set_dimensions(concat_raster,
