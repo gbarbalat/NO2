@@ -67,7 +67,7 @@ x=foreach (i=1:days_in_total) %do% {
 		# Add on .. data from 2023 have a zip component
 		# Define paths
 		zip_path <- paste0(here_data_pred,files_final[match(i,e)]) #"C:/Users/Guillaume/20230101.nc"
-		dest_dir <- paste0(here_data_pred,"extracted_data"])#"C:/Users/Guillaume/extracted_data"
+		dest_dir <- paste0(here_data_pred,"extracted_data")#"C:/Users/Guillaume/extracted_data"
 		# Unzip the file
 		utils::unzip(zip_path, exdir = dest_dir)
 		# List files to find the real .nc file
@@ -79,11 +79,13 @@ x=foreach (i=1:days_in_total) %do% {
 			if(class(try(read_stars(extracted_files[idx_nfile], sub = sub,driver = NULL,proxy=FALSE)))=="try-error") next
 			file_read <- try(read_stars(extracted_files[idx_nfile], sub = sub, driver = NULL,proxy=FALSE))
 		}
+		file_read <- st_set_crs(file_read, 4326)
 		#file_read <- read_stars(paste0(here_data_pred,files_final[match(i,e)]),sub = sub,driver = NULL,proxy=FALSE)
 	}
 		  
       } else {
         file_read <- read_stars(paste0(here_data_pred,files_final),sub = sub,driver = NULL,proxy=FALSE)
+		file_read <- st_set_crs(file_read, 4326)
       }
       
     }
@@ -127,7 +129,7 @@ x=foreach (i=1:days_in_total) %do% {
 #save(x,file=paste0(all_pred[idx_era5],".RData"))
 
 #concatenate foreach 
-concat_raster=do.call(c,x)
+concat_raster=do.call("c",x)
   # = concat_raster[-1,,]
   concat_raster = st_redimension(concat_raster)
   concat_raster = st_set_dimensions(concat_raster,
