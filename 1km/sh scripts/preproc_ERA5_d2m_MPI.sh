@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #OAR -n preproc_ERA5_d2m_MPI
-#OAR -l /nodes=1,walltime=1:00:00
+#OAR -l /nodes=1,walltime=5:00:00
 #OAR --stdout preproc_ERA5_d2m_MPI.out
 #OAR --stderr preproc_ERA5_d2m_MPI.err
 #OAR --project edenpelagie
