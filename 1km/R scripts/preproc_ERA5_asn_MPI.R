@@ -69,7 +69,7 @@ x=foreach (i=1:days_in_total) %do% {
 		zip_path <- paste0(here_data_pred,files_final[match(i,e)]) #"C:/Users/Guillaume/20230101.nc"
 		dest_dir <- paste0(here_data_pred,"extracted_data"])#"C:/Users/Guillaume/extracted_data"
 		# Unzip the file
-		unzip(zip_path, exdir = dest_dir)
+		utils::unzip(zip_path, exdir = dest_dir)
 		# List files to find the real .nc file
 		extracted_files <- list.files(dest_dir, full.names = TRUE)
 		length(extracted_files)
