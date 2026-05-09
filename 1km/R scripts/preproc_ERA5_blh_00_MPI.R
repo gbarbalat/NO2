@@ -67,7 +67,7 @@ x=foreach (i=1:days_in_total) %do% {
 		# Add on .. data from 2023 have a zip component
 		# Define paths
 		zip_path <- paste0(here_data_pred,files_final[match(i,e)]) #"C:/Users/Guillaume/20230101.nc"
-		dest_dir <- paste0(here_data_pred,"extracted_data")#"C:/Users/Guillaume/extracted_data"
+		dest_dir <- paste0(here_data_pred,"extracted_data/",sub)#"C:/Users/Guillaume/extracted_data"
 		# Unzip the file
 		utils::unzip(zip_path, exdir = dest_dir)
 		# List files to find the real .nc file
