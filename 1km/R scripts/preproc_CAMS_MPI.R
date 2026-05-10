@@ -76,7 +76,7 @@ x= (i=1:days_in_total) %do% {
 	}
 		
       } else {
-        file_read < read_stars(paste0(here_data_pred,files_final),sub = sub,driver = NULL,proxy=FALSE)
+        file_read <- read_stars(paste0(here_data_pred,files_final),sub = sub,driver = NULL,proxy=FALSE)
 		file_read <- st_set_crs(file_read, 4326)
       }
       
