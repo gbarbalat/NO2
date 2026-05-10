@@ -23,7 +23,7 @@ summary(no2.df_average)
   ## Adding coordinate information
   ## This was obtained also from SUMMER slama server
   coords <- read.csv(file=paste0(here_data_monitor,"all_stations.csv"), 
-                     header=TRUE, stringsAsFactors = FALSE, sep=";") %>%
+                     header=TRUE, stringsAsFactors = FALSE, sep=",") %>%
 	    select(c(Code,Latitude,Longitude, Implantation))
   no2.df_average_coords <- no2.df_average %>%
     left_join(coords, by = c("station"="Code")) %>%
