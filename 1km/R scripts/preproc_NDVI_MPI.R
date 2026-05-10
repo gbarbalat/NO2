@@ -27,6 +27,8 @@ c=unique(b)
 
 x=foreach (i=1:months_in_total) %do% {
 
+	concat_raster=france_grid
+
 	files_mosaic <- dir(path = here_data_NDVI, pattern=paste0(pattern_start,c[i]))#[1:3]
 
     	take_first = function(which_file) {
