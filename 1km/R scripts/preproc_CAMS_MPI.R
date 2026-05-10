@@ -36,7 +36,7 @@ name=list_param$name
  concat_raster=france_grid
   
   #
-x= (i=1:days_in_total) %do% {
+x=foreach (i=1:days_in_total) %do% {
      
     if (already_read==FALSE & mosaicking==FALSE & too_big==FALSE & monitors==FALSE) {
       
