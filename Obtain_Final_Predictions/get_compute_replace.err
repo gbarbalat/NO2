@@ -1,0 +1,525 @@
+./get_compute_replace.sh: line 10: cd: too many arguments
+./get_compute_replace.sh: line 10: cd: too many arguments
+Loading required package: nlme
+Loading required package: nlme
+This is mgcv 1.9-1. For overview type 'help("mgcv-package")'.
+
+Attaching package: 'data.table'
+
+
+Attaching package: 'data.table'
+
+The following objects are masked from 'package:reshape2':
+
+    dcast, melt
+
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:data.table':
+
+    between, first, last
+
+The following object is masked from 'package:nlme':
+
+    collapse
+
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:data.table':
+
+    between, first, last
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+The following object is masked from 'package:nlme':
+
+    collapse
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Loading required package: abind
+Loading required package: abind
+Loading required package: sf
+Linking to GEOS 3.12.2, GDAL 3.9.1, PROJ 9.4.1; sf_use_s2() is TRUE
+Warning messages:
+1: In CPL_get_gdal_drivers(0) :
+  GDAL Message 1: Driver PDF declares DMD_OPENOPTIONLIST whereas its proxy doesn't declare it or with a different value
+2: In CPL_get_gdal_drivers(0) :
+  GDAL Message 1: Driver PDF declares DCAP_OPEN whereas its proxy doesn't declare it or with a different value
+3: In In CPL_get_gdal_drivers(0
+ : GDAL Message 1: Driver PDF declares DMD_SUBDATASETS whereas its proxy doesn't declare it or with a different value
+ GDAL Message 1: Driver PDF declares DMD_SUBDATASETS whereas its proxy doesn't declare it or with a different value
+4: CPL_get_gdal_drivers(0) :In CPL_get_gdal_drivers(0) :
+ DAL Message 1: Proxy driver PDF declares a pfnIdentify callback whereas the real driver does not.
+ GDAL Message 1: Proxy driver PDF declares a pfnIdentify callback whereas the real driver does not.
+5: CPL_get_gdal_drivers(0) :In CPL_get_gdal_drivers(0) :
+ DAL Message 1: Driver PDF declares a pfnOpen callback whereas its proxy doest not declare DCAP_OPEN
+ GDAL Message 1: Driver PDF declares a pfnOpen callback whereas its proxy doest not declare DCAP_OPEN
+
+Attaching package: 'lubridate'
+
+The following objects are masked from 'package:data.table':
+
+    hour, isoweek, mday, minute, month, quarter, second, wday, week,
+    yday, year
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+
+Attaching package: 'lubridate'
+
+The following objects are masked from 'package:data.table':
+
+    hour, isoweek, mday, minute, month, quarter, second, wday, week,
+    yday, year
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+
+Attaching package: 'zoo'
+
+The following objects are masked from 'package:data.table':
+
+    yearmon, yearqtr
+
+The following objects are masked from 'package:base':
+
+    as.Date, as.Date.numeric
+
+
+Attaching package: 'zoo'
+
+The following objects are masked from 'package:data.table':
+
+    yearmon, yearqtr
+
+The following objects are masked from 'package:base':
+
+    as.Date, as.Date.numeric
+
+./get_compute_replace.sh: line 10: cd: too many arguments
+Loading required package: nlme
+This is mgcv 1.9-1. For overview type 'help("mgcv-package")'.
+
+Attaching package: 'data.table'
+
+The following objects are masked from 'package:reshape2':
+
+    dcast, melt
+
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:data.table':
+
+    between, first, last
+
+The following object is masked from 'package:nlme':
+
+    collapse
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Loading required package: abind
+Loading required package: sf
+Linking to GEOS 3.12.2, GDAL 3.9.1, PROJ 9.4.1; sf_use_s2() is TRUE
+Warning messages:
+1: In CPL_get_gdal_drivers(0) :
+  GDAL Message 1: Driver PDF declares DMD_OPENOPTIONLIST whereas its proxy doesn't declare it or with a different value
+2: In CPL_get_gdal_drivers(0) :
+  GDAL Message 1: Driver PDF declares DCAP_OPEN whereas its proxy doesn't declare it or with a different value
+3: In CPL_get_gdal_drivers(0) :
+  GDAL Message 1: Driver PDF declares DMD_SUBDATASETS whereas its proxy doesn't declare it or with a different value
+4: In CPL_get_gdal_drivers(0) :
+  GDAL Message 1: Proxy driver PDF declares a pfnIdentify callback whereas the real driver does not.
+5: In CPL_get_gdal_drivers(0) :
+  GDAL Message 1: Driver PDF declares a pfnOpen callback whereas its proxy doest not declare DCAP_OPEN
+
+Attaching package: 'lubridate'
+
+The following objects are masked from 'package:data.table':
+
+    hour, isoweek, mday, minute, month, quarter, second, wday, week,
+    yday, year
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+
+Attaching package: 'zoo'
+
+The following objects are masked from 'package:data.table':
+
+    yearmon, yearqtr
+
+The following objects are masked from 'package:base':
+
+    as.Date, as.Date.numeric
+
+Warning message:
+attribute variables are assumed to be spatially constant throughout all geometries 
+Warning message:
+attribute variables are assumed to be spatially constant throughout all geometries 
+Warning message:
+attribute variables are assumed to be spatially constant throughout all geometries 
+./get_compute_replace.sh: line 10: cd: too many arguments
+Loading required package: nlme
+This is mgcv 1.9-1. For overview type 'help("mgcv-package")'.
+
+Attaching package: 'data.table'
+
+The following objects are masked from 'package:reshape2':
+
+    dcast, melt
+
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:data.table':
+
+    between, first, last
+
+The following object is masked from 'package:nlme':
+
+    collapse
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Loading required package: abind
+Loading required package: sf
+Linking to GEOS 3.12.2, GDAL 3.9.1, PROJ 9.4.1; sf_use_s2() is TRUE
+Warning messages:
+1: In CPL_get_gdal_drivers(0) :
+  GDAL Message 1: Driver PDF declares DMD_OPENOPTIONLIST whereas its proxy doesn't declare it or with a different value
+2: In CPL_get_gdal_drivers(0) :
+  GDAL Message 1: Driver PDF declares DCAP_OPEN whereas its proxy doesn't declare it or with a different value
+3: In CPL_get_gdal_drivers(0) :
+  GDAL Message 1: Driver PDF declares DMD_SUBDATASETS whereas its proxy doesn't declare it or with a different value
+4: In CPL_get_gdal_drivers(0) :
+  GDAL Message 1: Proxy driver PDF declares a pfnIdentify callback whereas the real driver does not.
+5: In CPL_get_gdal_drivers(0) :
+  GDAL Message 1: Driver PDF declares a pfnOpen callback whereas its proxy doest not declare DCAP_OPEN
+
+Attaching package: 'lubridate'
+
+The following objects are masked from 'package:data.table':
+
+    hour, isoweek, mday, minute, month, quarter, second, wday, week,
+    yday, year
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+
+Attaching package: 'zoo'
+
+The following objects are masked from 'package:data.table':
+
+    yearmon, yearqtr
+
+The following objects are masked from 'package:base':
+
+    as.Date, as.Date.numeric
+
+./get_compute_replace.sh: line 10: cd: too many arguments
+Loading required package: nlme
+This is mgcv 1.9-1. For overview type 'help("mgcv-package")'.
+
+Attaching package: 'data.table'
+
+The following objects are masked from 'package:reshape2':
+
+    dcast, melt
+
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:data.table':
+
+    between, first, last
+
+The following object is masked from 'package:nlme':
+
+    collapse
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Loading required package: abind
+Loading required package: sf
+Linking to GEOS 3.12.2, GDAL 3.9.1, PROJ 9.4.1; sf_use_s2() is TRUE
+Warning messages:
+1: In CPL_get_gdal_drivers(0) :
+  GDAL Message 1: Driver PDF declares DMD_OPENOPTIONLIST whereas its proxy doesn't declare it or with a different value
+2: In CPL_get_gdal_drivers(0) :
+  GDAL Message 1: Driver PDF declares DCAP_OPEN whereas its proxy doesn't declare it or with a different value
+3: In CPL_get_gdal_drivers(0) :
+  GDAL Message 1: Driver PDF declares DMD_SUBDATASETS whereas its proxy doesn't declare it or with a different value
+4: In CPL_get_gdal_drivers(0) :
+  GDAL Message 1: Proxy driver PDF declares a pfnIdentify callback whereas the real driver does not.
+5: In CPL_get_gdal_drivers(0) :
+  GDAL Message 1: Driver PDF declares a pfnOpen callback whereas its proxy doest not declare DCAP_OPEN
+
+Attaching package: 'lubridate'
+
+The following objects are masked from 'package:data.table':
+
+    hour, isoweek, mday, minute, month, quarter, second, wday, week,
+    yday, year
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+
+Attaching package: 'zoo'
+
+The following objects are masked from 'package:data.table':
+
+    yearmon, yearqtr
+
+The following objects are masked from 'package:base':
+
+    as.Date, as.Date.numeric
+
+./get_compute_replace.sh: line 10: cd: too many arguments
+Loading required package: nlme
+This is mgcv 1.9-1. For overview type 'help("mgcv-package")'.
+
+Attaching package: 'data.table'
+
+The following objects are masked from 'package:reshape2':
+
+    dcast, melt
+
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:data.table':
+
+    between, first, last
+
+The following object is masked from 'package:nlme':
+
+    collapse
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Loading required package: abind
+Loading required package: sf
+Linking to GEOS 3.12.2, GDAL 3.9.1, PROJ 9.4.1; sf_use_s2() is TRUE
+Warning messages:
+1: In CPL_get_gdal_drivers(0) :
+  GDAL Message 1: Driver PDF declares DMD_OPENOPTIONLIST whereas its proxy doesn't declare it or with a different value
+2: In CPL_get_gdal_drivers(0) :
+  GDAL Message 1: Driver PDF declares DCAP_OPEN whereas its proxy doesn't declare it or with a different value
+3: In CPL_get_gdal_drivers(0) :
+  GDAL Message 1: Driver PDF declares DMD_SUBDATASETS whereas its proxy doesn't declare it or with a different value
+4: In CPL_get_gdal_drivers(0) :
+  GDAL Message 1: Proxy driver PDF declares a pfnIdentify callback whereas the real driver does not.
+5: In CPL_get_gdal_drivers(0) :
+  GDAL Message 1: Driver PDF declares a pfnOpen callback whereas its proxy doest not declare DCAP_OPEN
+
+Attaching package: 'lubridate'
+
+The following objects are masked from 'package:data.table':
+
+    hour, isoweek, mday, minute, month, quarter, second, wday, week,
+    yday, year
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+
+Attaching package: 'zoo'
+
+The following objects are masked from 'package:data.table':
+
+    yearmon, yearqtr
+
+The following objects are masked from 'package:base':
+
+    as.Date, as.Date.numeric
+
+Warning message:
+attribute variables are assumed to be spatially constant throughout all geometries 
+Warning message:
+attribute variables are assumed to be spatially constant throughout all geometries 
+Warning message:
+attribute variables are assumed to be spatially constant throughout all geometries 
+./get_compute_replace.sh: line 10: cd: too many arguments
+Loading required package: nlme
+This is mgcv 1.9-1. For overview type 'help("mgcv-package")'.
+
+Attaching package: 'data.table'
+
+The following objects are masked from 'package:reshape2':
+
+    dcast, melt
+
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:data.table':
+
+    between, first, last
+
+The following object is masked from 'package:nlme':
+
+    collapse
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Loading required package: abind
+Loading required package: sf
+Linking to GEOS 3.12.2, GDAL 3.9.1, PROJ 9.4.1; sf_use_s2() is TRUE
+Warning messages:
+1: In CPL_get_gdal_drivers(0) :
+  GDAL Message 1: Driver PDF declares DMD_OPENOPTIONLIST whereas its proxy doesn't declare it or with a different value
+2: In CPL_get_gdal_drivers(0) :
+  GDAL Message 1: Driver PDF declares DCAP_OPEN whereas its proxy doesn't declare it or with a different value
+3: In CPL_get_gdal_drivers(0) :
+  GDAL Message 1: Driver PDF declares DMD_SUBDATASETS whereas its proxy doesn't declare it or with a different value
+4: In CPL_get_gdal_drivers(0) :
+  GDAL Message 1: Proxy driver PDF declares a pfnIdentify callback whereas the real driver does not.
+5: In CPL_get_gdal_drivers(0) :
+  GDAL Message 1: Driver PDF declares a pfnOpen callback whereas its proxy doest not declare DCAP_OPEN
+
+Attaching package: 'lubridate'
+
+The following objects are masked from 'package:data.table':
+
+    hour, isoweek, mday, minute, month, quarter, second, wday, week,
+    yday, year
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+
+Attaching package: 'zoo'
+
+The following objects are masked from 'package:data.table':
+
+    yearmon, yearqtr
+
+The following objects are masked from 'package:base':
+
+    as.Date, as.Date.numeric
+
+./get_compute_replace.sh: line 10: cd: too many arguments
+Loading required package: nlme
+This is mgcv 1.9-1. For overview type 'help("mgcv-package")'.
+
+Attaching package: 'data.table'
+
+The following objects are masked from 'package:reshape2':
+
+    dcast, melt
+
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:data.table':
+
+    between, first, last
+
+The following object is masked from 'package:nlme':
+
+    collapse
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Loading required package: abind
+Loading required package: sf
+Linking to GEOS 3.12.2, GDAL 3.9.1, PROJ 9.4.1; sf_use_s2() is TRUE
+Warning messages:
+1: In CPL_get_gdal_drivers(0) :
+  GDAL Message 1: Driver PDF declares DMD_OPENOPTIONLIST whereas its proxy doesn't declare it or with a different value
+2: In CPL_get_gdal_drivers(0) :
+  GDAL Message 1: Driver PDF declares DCAP_OPEN whereas its proxy doesn't declare it or with a different value
+3: In CPL_get_gdal_drivers(0) :
+  GDAL Message 1: Driver PDF declares DMD_SUBDATASETS whereas its proxy doesn't declare it or with a different value
+4: In CPL_get_gdal_drivers(0) :
+  GDAL Message 1: Proxy driver PDF declares a pfnIdentify callback whereas the real driver does not.
+5: In CPL_get_gdal_drivers(0) :
+  GDAL Message 1: Driver PDF declares a pfnOpen callback whereas its proxy doest not declare DCAP_OPEN
+
+Attaching package: 'lubridate'
+
+The following objects are masked from 'package:data.table':
+
+    hour, isoweek, mday, minute, month, quarter, second, wday, week,
+    yday, year
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+
+Attaching package: 'zoo'
+
+The following objects are masked from 'package:data.table':
+
+    yearmon, yearqtr
+
+The following objects are masked from 'package:base':
+
+    as.Date, as.Date.numeric
+
+Warning message:
+attribute variables are assumed to be spatially constant throughout all geometries 
+Warning message:
+attribute variables are assumed to be spatially constant throughout all geometries 
