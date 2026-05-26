@@ -21,6 +21,7 @@ library(caret)
 library(CAST)
 library(dplyr)
 library(sf)
+library(lubridate)
 
 path_to="/bettik/barbalag/"
 file_is=paste0("df_final_Model2_",current_year,".RData")
@@ -32,7 +33,7 @@ df=as.data.frame(df_final_Model2)
 df$spacevar=paste0(as.character(df$X),"-",as.character(df$Y))
 (length(unique(df$spacevar)))
 df$spacetimevar=paste0(as.character(df$X),"-",as.character(df$Y),"-",as.character(df$time))
-df$period=cut(df$time,breaks=quantile(1:days_in_total,probs=seq(0, 1, length.out = n_breaks+1)),labels=FALSE,include.lowest=TRUE)
+df$time <- yday(df$time); df$period=cut(df$time,breaks=quantile(1:days_in_total,probs=seq(0, 1, length.out = n_breaks+1)),labels=FALSE,include.lowest=TRUE)
 df$spaceperiodvar=paste0(as.character(df$X),"-",as.character(df$Y),"-",as.character(df$period))
 
 ########################################
