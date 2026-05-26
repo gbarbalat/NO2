@@ -16,6 +16,7 @@ prepara_df_Model1 and 2 prepare dataframes before running Model 1 and 2
 
 FoldsID prepare folds  for Model2  
 basis_lrn_pred4ens_ST_MPI prepares folds for Model3  
+basis_lrn_pred4ens_ST_MPI_other_param is used when param settings inappropriate for basis_lrn_pred4ens_ST_MPI (gives error message)  
 
 
 concat_pred_ens concatenates ens predictions for the year   
