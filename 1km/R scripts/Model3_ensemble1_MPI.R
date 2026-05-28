@@ -176,7 +176,7 @@ sf_data=all_data %>% mutate(month=lubridate::month(as.Date(paste0(current_year,"
 			st_as_sf(coords=c("X","Y"),crs=st_crs(2154))
 
 #load monitor data and make it sf 
-all_mon=read.csv("/bettik/barbalag/data/monitor_data/all_stations.csv",sep=";") %>%
+all_mon=read.csv("/bettik/barbalag/data/monitor_data/all_stations.csv",sep=",") %>%
 		select(Longitude,Latitude,Implantation) %>%
 		st_as_sf(coords=1:2,crs=st_crs(4326)) %>%
 		st_transform(crs=st_crs(2154))
