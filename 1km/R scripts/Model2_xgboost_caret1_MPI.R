@@ -211,7 +211,7 @@ for (i_test in 1:length(data4_Model2)) {
 
 sub_test = data4_Model2[[i_test]]
 	
-	for (i in 3:40) {
+	for (i in 2:40) {
 		#file_to_predict=paste0("updated_DMraster_France_var",i,"_",current_year,".RData")
 		file_to_predict=paste0("updated_DMraster_France_var",i,"_month",i_test,"_",current_year,".RData")
 		load(file=paste0(path_to,file_to_predict))
