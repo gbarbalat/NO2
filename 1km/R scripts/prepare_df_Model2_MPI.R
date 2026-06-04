@@ -52,7 +52,7 @@ df_final_Model2 =df_final_Model2 %>% cbind(coords) %>% st_drop_geometry()
 (head(df_final_Model2))
 #save(df_final_Model2,file=paste0("df_final_Model2_var",2,"_",current_year,".RData"))
 
-for (i in 2:40) {#DO NOT take out OMI as you are taking "predictions", so start from 1
+for (i in 3:40) {#DO NOT take out OMI as you are taking "predictions", DO NOT take CAMS so start from 3
 file_is=paste0("updated_DMraster_France_var",i,"_",current_year,".RData")#is a raster 
 load(file=paste0(path_to,file_is)) 
 #st_crs(data4_Model2)=2154
