@@ -52,6 +52,7 @@ Keep 1 km ensemble predictions for the year in main directory
 
 ### 200 m model (gricad)  
 dir=/bettik/barbalag/200m_header/  
+Change header.R  
 uses elevation, CLC, IGN, NDVI, monitors, beware NDVI data should be in /data/$year  
 Run ALL_SCRIPTS_200_MPI.sh  
 Put output in ./200m_header/$year  
