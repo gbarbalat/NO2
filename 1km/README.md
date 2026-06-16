@@ -19,5 +19,6 @@ basis_lrn_pred4ens_ST_MPI prepares folds for Model3
 basis_lrn_pred4ens_ST_MPI_other_param is used when param settings inappropriate for basis_lrn_pred4ens_ST_MPI (gives error message)  
 
 
-concat_pred_ens concatenates ens predictions for the year   
+concat_pred_ens concatenates ens predictions for the year (should not be done)   
+
 modify hdr in the script and check where the data should be  
