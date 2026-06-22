@@ -59,7 +59,7 @@ Put output in ./200m_header/$year
 Put 1 km ensemble predictions in /bettik/barbalag/output4plot/  
 
 ### Final predictions  
-Run get_compute_replace for each year  
+Run ./FINAL PREDS/get_compute_replace for each year  
 Produces final predictions as .fst files  
 Each '*_1km.fst' file is a dataframe of 4 columns and 591,869 x nDays rows. nDays=365 (366 for leap years)  
 4 columns: x, y, predictions, time  
