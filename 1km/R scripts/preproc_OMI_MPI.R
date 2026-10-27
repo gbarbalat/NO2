@@ -3,6 +3,8 @@ source("bare_minimum_parallel_MPI.R")
 ####################
 here_data_OMI=paste0(here_data,"OMI/",current_year,"/")
 files <- dir(path = here_data_OMI,pattern="*.he5.SUB.nc4")
+files <- dir(path = here_data_OMI,pattern="*.he5")
+
 files.length <- length(files)
 list_omi=list(here_data_pred=here_data_OMI,already_read=FALSE, file_read=NULL,file_sf=NULL,
                          mosaicking=FALSE,files_mosaic=NULL,which_att=FALSE,too_big=FALSE,
