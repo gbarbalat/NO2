@@ -63,6 +63,14 @@ python -m pip --version
 
 Then run python
 And copy paste the API code obtained from the website, eg
+
+ADS
+
+
+CDI
+url: https://cds.climate.copernicus.eu/api
+key: 10e7ba3f-48cd-469e-be6a-951433fec43f
+
 You will obtain files on your local computer which you will have to upload to the server
 
 #################
