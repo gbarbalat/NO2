@@ -27,6 +27,7 @@ Briefly, predictions were obtained following 3 modeling stages
 
 ### Pre-processing
 - IGN data (roads, road_nodes, train_stations, rail) with script read_IGN_data; produces RData files which you will transfer onto the grid
+- From 2024 onwards, you can only download monthly data but you can then reconstruct individual daily files using split_ERA_nc_files.R  
 - Download the following data: IGN, OMI, CAMS, all ERA5, monitor data, NDVI, DMSP (all yearly data), CLC (6 years), Pop (5 years), Emission (INERIS : 2004-2007-2012), Elevation (once)
 - Transfer to gricad (UGA grid to make computations)
 
