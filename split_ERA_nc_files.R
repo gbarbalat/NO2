@@ -6,7 +6,6 @@ out_dir  <- file.path(base_dir, "Daily_NC_2024")
 if (!dir.exists(out_dir)) dir.create(out_dir, recursive = TRUE)
 
 # 2. Map the folder/zip month labels to month numbers (1 to 12)
-# Adjust patterns if your exact folder/zip names vary slightly (e.g., "April2024" vs "Apr2024")
 month_patterns <- c(
   "Jv2024", "Feb2024", "March2024", "April2024", "May2024", "June2024",
   "July2024", "Aug2024", "Sept2024", "Oct2024", "Nov2024", "Dec2024"
@@ -29,21 +28,30 @@ for (m in seq_along(month_patterns)) {
   temp_unzip_dir <- file.path(tempdir(), paste0("unzip_m", m))
   unzip(matched_zip[1], exdir = temp_unzip_dir)
   
-  # Locate the instant stepType .nc file inside the extracted archive
-  nc_file <- list.files(
+  # Locate both the instant and accum .nc files inside the extracted archive
+  nc_instant <- list.files(
     temp_unzip_dir, 
     pattern = "stepType-instant\\.nc$", 
     full.names = TRUE, 
     recursive = TRUE
   )
   
-  if (length(nc_file) == 0) {
-    warning(paste("No instant .nc file found inside:", basename(matched_zip[1])))
+  nc_accum <- list.files(
+    temp_unzip_dir, 
+    pattern = "stepType-accum\\.nc$", 
+    full.names = TRUE, 
+    recursive = TRUE
+  )
+  
+  if (length(nc_instant) == 0 || length(nc_accum) == 0) {
+    warning(paste("Missing instant or accum .nc file inside:", basename(matched_zip[1])))
+    unlink(temp_unzip_dir, recursive = TRUE)
     next
   }
   
-  # Read the monthly NetCDF file
-  tmp <- read_stars(nc_file[1])
+  # Read both monthly NetCDF files
+  tmp_instant <- read_stars(nc_instant[1])
+  tmp_accum   <- read_stars(nc_accum[1])
   
   # Dynamically calculate start and end dates for month m in 2024
   start_date <- as.Date(sprintf("2024-%02d-01", m))
@@ -52,17 +60,24 @@ for (m in seq_along(month_patterns)) {
   
   message(sprintf("Processing %s (%d days)...", pat, length(dates)))
   
-  # 4. Slice each 24-hour day and export as YYYYMMDD.nc
+  # 4. Slice each 24-hour day from both files, combine attributes, and export as YYYYMMDD.nc
   for (i in seq_along(dates)) {
     start_idx <- (i - 1) * 24 + 1
     end_idx   <- i * 24
     
-    daily_slice <- tmp[, , , start_idx:end_idx]
+    daily_instant <- tmp_instant[, , , start_idx:end_idx]
+    daily_accum   <- tmp_accum[, , , start_idx:end_idx]
+    
+    # Ensure exact dimension metadata match before combining attributes
+    st_dimensions(daily_accum) <- st_dimensions(daily_instant)
+    
+    # Combine instant and accumulated variables into a single stars object
+    daily_combined <- c(daily_instant, daily_accum)
     
     out_name <- paste0(format(dates[i], "%Y%m%d"), ".nc")
     out_path <- file.path(out_dir, out_name)
     
-    write_mdim(daily_slice, out_path)
+    write_mdim(daily_combined, out_path)
   }
   
   # Clean up extracted temp files to save disk space
